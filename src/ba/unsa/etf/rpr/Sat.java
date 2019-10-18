@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class Sat {
     private int sati,minute,sekunde;
     public Sat(int sati,int minute,int sekunde){
-        Postavi(sati,minute,sekunde);
+        postavi(sati,minute,sekunde);
     }
-    public void Postavi(int sati,int minute,int sekunde){
+    public void postavi(int sati,int minute,int sekunde){
         this.sati=sati;
         this.minute=minute;
         this.sekunde=sekunde;
     }
-    public void Sljedeci(){
+    public void sljedeci(){
         sekunde++;
         if(sekunde==60){
             minute++;
@@ -23,7 +23,7 @@ public class Sat {
         }
         if(sati==24)sati=0;
     }
-    public void Prethodni(){
+    public void prethodni(){
         sekunde--;
         if(sekunde==-1){
             sekunde=59;
@@ -37,20 +37,20 @@ public class Sat {
         if(sati==-1)sati=23;
 
     }
-    public void PomjeriZa(int pomak){
-        if(pomak>0)for(int i=0;i<pomak;i++) Sljedeci();
-        else for(int i=0;i<-pomak;i++)Prethodni();
+    public void pomjeriZa(int pomak){
+        if(pomak>0)for(int i=0;i<pomak;i++) sljedeci();
+        else for(int i=0;i<-pomak;i++)prethodni();
     }
-    public final int DajSate(){
+    public final int dajSate(){
         return sati;
     }
-    public final int DajMinute(){
+    public final int dajMinute(){
         return minute;
     }
-    public final int DajSekunde(){
+    public final int dajSekunde(){
         return sekunde;
     }
-    public final void Ispisi(){
+    public final void ispisi(){
         System.out.println(sati+":"+minute+":"+sekunde);
     }
 
